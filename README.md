@@ -8,14 +8,21 @@ Zubereitung: Bei rohen Lebensmitteln (Fleisch, Fisch, Ei, Gemüse, Reis, Nudeln,
 
 ## Auf dem Handy nutzen (Android)
 
-Die App muss über **HTTPS** erreichbar sein, sonst bietet Chrome die Installation nicht an.
+Die App liegt öffentlich auf GitHub Pages: **https://maylangde.github.io/phileat/**
 
-1. `npm run build` erzeugt den Ordner `dist/`.
-2. Im Hostinger-hPanel eine Subdomain anlegen (z. B. `eat.deinedomain.com`) und SSL aktivieren.
-3. Den **Inhalt** von `dist/` in den `public_html`-Ordner dieser Subdomain hochladen (Dateimanager oder FTP).
-4. Auf dem Android-Handy die Adresse in Chrome öffnen → Menü → **App installieren** (oder in der App unter Mehr → Einstellungen → Installieren).
+1. Die Adresse in Chrome auf dem Android-Handy öffnen.
+2. Menü (drei Punkte) → **App installieren** (oder in der App unter Mehr → Einstellungen → Installieren).
+3. Die App erscheint auf dem Startbildschirm, startet im Vollbild und läuft danach auch ohne Internet.
 
-Bei einem neuen Stand: erneut bauen, hochladen. Die App aktualisiert sich beim nächsten Start selbst.
+Die Daten bleiben auf dem Handy. GitHub hostet nur den Programmcode, nie deine Einträge.
+
+### Aktualisieren
+
+Jeder Push auf `main` startet in GitHub Actions einen Lauf (Tests, Build, Veröffentlichung, siehe `.github/workflows/pages.yml`). Nach etwa einer Minute ist die neue Version online. Auf dem Handy aktualisiert sich die App beim nächsten Start selbst, bei Bedarf einmal komplett schließen und neu öffnen.
+
+### Anderes Hosting
+
+`npm run build` erzeugt den Ordner `dist/`. Dessen Inhalt kann auf jeden Webspace mit HTTPS hochgeladen werden, z. B. eine Subdomain bei Hostinger.
 
 ## Entwicklung
 
